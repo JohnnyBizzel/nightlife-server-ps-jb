@@ -8,7 +8,7 @@ function Reservations () {
 	this.getAllReservationsFromYelpCall = function (req, res) {
 		console.log("received reservations from yelp",req.body);
 		var businessIDs = req.body.ids  //this is an array [id, id, id..]
-		var arr = businessIDs.map(val => {
+		var arr = businessIDs.map(function(val) {
 			return (val)
 		})
 
