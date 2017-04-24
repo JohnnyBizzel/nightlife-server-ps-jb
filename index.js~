@@ -11,7 +11,7 @@ const dotenv = require('dotenv');
 dotenv.load();
 
 // DB Setup
-const db = mongoose.connect('mongodb://terry:test123@ds051893.mlab.com:51893/nitelife-eg');
+const db = mongoose.connect('mongodb://localhost:auth/auth');
 
 // App Setup
 app.use(morgan('combined'));
