@@ -11,7 +11,8 @@ const dotenv = require('dotenv');
 dotenv.load();
 
 // DB Setup
-const db = mongoose.connect('mongodb://terry:test123@ds051893.mlab.com:51893/nitelife-eg');
+const userpass = process.env.MONGO_USER + ':' + process.env.MONGO_PWD
+const db = mongoose.connect('mongodb://' + userpass + '@ds051893.mlab.com:51893/nitelife-eg');
 
 // App Setup
 app.use(morgan('combined'));
