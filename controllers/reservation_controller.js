@@ -1,5 +1,4 @@
 const Businesses = require('../models/businesses');
-// const config = require('../config');
 const mongoose = require('mongoose');
 
 // Add reservations and remove reservations

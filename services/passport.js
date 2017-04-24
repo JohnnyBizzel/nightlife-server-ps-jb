@@ -1,7 +1,7 @@
 const passport = require('passport');
 const User = require('../models/user');
 //const config = require('../config');
-const config = require('../config.json');
+//const config = require('../config.json');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
@@ -26,10 +26,12 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
   });
 });
 
-// Setup options for JWT Strategy (NB config replaced here)
+// Setup options for JWT Strategy (NB config.secret replaced here)
+const secretKey = 'test' || process.env.SECRET;
+console.log(secretKey)
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: config.secret
+  secretOrKey: secretKey 
 };
 
 // Create JWT strategy
